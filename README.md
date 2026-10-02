@@ -2,6 +2,12 @@
 
 A five-round, 2–6 player cooperative observation game. Players join with a room code, inspect a shared illustrated room with a few player-specific details, talk through what they see, and vote for the exact object that feels wrong.
 
+## About This Project
+
+Odd Hours was created for the **AI Skills Studio X OpenAI Multiplayer Game Challenge** on Handshake. The game was designed and developed with **ChatGPT and Codex**, using AI-assisted development to take the concept from idea to a working multiplayer web game.
+
+**Live Demo:** https://oddhours.onrender.com/
+
 ## Run locally
 
 Requires Node.js 20 or newer. From this folder, run:
