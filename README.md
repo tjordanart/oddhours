@@ -1,35 +1,66 @@
-# Odd Hours
+# Odd Hours — Multiplayer Observation Game
 
-A five-round, 2–6 player cooperative observation game. Players join with a room code, inspect a shared illustrated room with a few player-specific details, talk through what they see, and vote for the exact object that feels wrong.
+**Personal Project · AI Skills Studio × OpenAI Multiplayer Game Challenge**
 
-## About This Project
+A cooperative multiplayer observation game where players inspect illustrated rooms, discuss suspicious details, and vote on the object that feels out of place.
 
-Odd Hours was created for the **AI Skills Studio X OpenAI Multiplayer Game Challenge** on Handshake. The game was designed and developed with **ChatGPT and Codex**, using AI-assisted development to take the concept from idea to a working multiplayer web game.
+**Live Demo:** [Play Odd Hours](https://oddhours.onrender.com/)
 
-**Live Demo:** https://oddhours.onrender.com/
+## Overview
 
-## Run locally
+Odd Hours is a five-round, cooperative web game for 2–6 players. Players join a shared room using a six-character code and examine illustrated scenes containing player-specific visual details.
 
-Requires Node.js 20 or newer. From this folder, run:
+Players discuss what they observe and work together to identify the intended anomaly. Some details vary between players as decoys, encouraging communication and careful observation.
 
-```sh
+Created for the AI Skills Studio × OpenAI Multiplayer Game Challenge on Handshake, the game was developed with ChatGPT and Codex as AI-assisted development tools.
+
+## Features
+
+- Cooperative gameplay for 2–6 players
+- Five-round game structure
+- Room creation and joining with a six-character code
+- Shared multiplayer game sessions
+- Illustrated rooms with player-specific visual details
+- Anomaly identification and player voting
+- Harmless decoys that encourage discussion
+- Browser-based gameplay without player accounts
+- Public deployment on Render
+
+## Technology
+
+- **JavaScript** — Game logic and interactive gameplay
+- **Node.js** — Server-side runtime
+- **Express** — Web server
+- **HTML and CSS** — Game interface and styling
+- **Render** — Public hosting and deployment
+- **ChatGPT and Codex** — AI-assisted development
+
+## Play Locally
+
+**Requirements:** Node.js 20 or newer.
+
+1. Clone or download the repository.
+2. Open a terminal in the project folder.
+3. Start the server:
+
+```bash
 npm start
 ```
 
-Then open `http://localhost:3000`. To play across separate devices, the server must be reachable by both devices; localhost is only for trying the interface on one computer.
+4. Open `http://localhost:3000` in your browser.
 
-## Put it on a public URL
+To play across multiple devices, the server must be reachable by each device. The local address works for testing on the same computer.
 
-The included `render.yaml` is a Render Blueprint. To deploy:
+## Deployment
 
-1. Put this `odd-hours` folder in a GitHub repository.
-2. In Render, choose **New → Blueprint**, connect the repository, and select this folder's `render.yaml`.
-3. Deploy the `odd-hours` web service. Render will provide a public `onrender.com` URL to share with players.
+The repository includes a `render.yaml` Blueprint configuration for deploying the game to Render.
 
-No accounts are required for players. The host and players use the same public URL and a six-character room code.
+Once deployed, players can open the public URL, create or join a room, and play together using the room code.
 
-## Current multiplayer scope
+## Current Limitations
 
-Room state lives in the Node server's memory. Run a single server instance; restarting or redeploying it clears active rooms. The free Render service may sleep when unused, which also clears rooms when it restarts. This keeps the first playable version dependency-free; longer-lived matches need persistent shared storage.
-
-Round content and illustrations are hand-authored in `server.js` and `app.js`. Each round gives at least one player a view of the intended anomaly, while other details can vary by player as harmless decoys.
+- Active room state is stored in server memory and is lost when the server restarts or redeploys.
+- The game is designed to run on a single server instance.
+- Render's free service may sleep when inactive, potentially interrupting active rooms.
+- Round content and illustrations are currently authored directly in `server.js` and `app.js`.
+- Persistent shared storage would be needed to support more
